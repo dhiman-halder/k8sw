@@ -51,3 +51,35 @@ aws, eksctl & kubectl tools installed and pre-configured
 ```kubectl get rs```
 or
 ```kubectl get replicasets```
+### Get complete details of a replicaset
+```kubectl describe rs web-rs```
+### Get the pods managed by the replicaset
+```kubectl get pods -o wide```
+### To verify the autoheal capability of a rs
+```kubectl delete pod <podname>```
+
+```kubectl get pods```
+
+```kubectl describe rs web-rs```
+
+### Declarative way of scaling a replicaset
+Edit replicaset.yaml and update the replica count to 5
+
+#### Apply updated definition
+```kubectl apply -f replicaset.yaml```
+
+```kubectl get pods```
+
+### Imperative way of scaling a replicaset
+
+```kubectl scale rs web-rs —replicas=2```
+
+```kubectl get pods```
+
+### Edit a live replicaset
+```kubectl edit rs web-rs```
+
+```kubectl get pods```
+
+### Delete replicaset
+```kubectl delete rs web-rs```
