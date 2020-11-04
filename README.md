@@ -76,7 +76,7 @@ Edit replicaset.yaml and update the replica count to 5
 
 ```kubectl get pods```
 
-### Edit a live replicaset
+### Edit a live replicaset and update the replica count to 6
 ```kubectl edit rs web-rs```
 
 ```kubectl get pods```
@@ -93,7 +93,7 @@ Edit replicaset.yaml and update the replica count to 5
 ```kubectl rollout status web-deploy```
 
 ### List deployments
-```kubectl get deploy```
+```kubectl get deploy``` or ```kubectl get deployments```
 
 ### Describe a deployment
 ```kubectl describe deploy web-deploy```
