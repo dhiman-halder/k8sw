@@ -21,9 +21,13 @@ aws, eksctl & kubectl tools installed and pre-configured
 ```kubectl get pod web-pod -o yaml```
 ### Start a shell within the container of a pod
 ```kubectl exec -it web-pod -c nginx -- sh```
+
 ```ls```
+
 ```cat /etc/nginx/nginx.conf```
+
 ```exit```
+
 
 ### Delete a pod
 ```kubectl delete pod web-pod```
