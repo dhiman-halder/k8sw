@@ -1,4 +1,4 @@
-# K8s Workshop
+# K8s/EKS 101 Workshop
 ## Pre-Requisites
 aws, eksctl & kubectl tools installed and pre-configured
 ## General
