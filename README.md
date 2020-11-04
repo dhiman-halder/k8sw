@@ -65,7 +65,7 @@ or
 ### Declarative way of scaling a replicaset
 Edit replicaset.yaml and update the replica count to 5
 
-#### Apply updated definition
+#### Apply updated definition and relist pods
 ```kubectl apply -f replicaset.yaml```
 
 ```kubectl get pods```
@@ -83,3 +83,77 @@ Edit replicaset.yaml and update the replica count to 5
 
 ### Delete replicaset
 ```kubectl delete rs web-rs```
+
+
+## DEPLOYMENT
+### Create a deployment from a yaml definition
+```kubectl apply -f deployment.yaml```
+
+### Check the rollout status of the deployment
+```kubectl rollout status web-deploy```
+
+### List deployments
+```kubectl get deploy```
+
+### Describe a deployment
+```kubectl describe deploy web-deploy```
+
+### Check the replicaset associated with the deployment
+```kubectl get rs```
+
+### List the pods managed by the replicaset & deployment
+```kubectl get pods```
+
+### Get the rollout history of a deployment
+```kubectl rollout history web-deploy```
+
+### Get the rollout history of a particular rollout of a deployment
+```kubectl rollout history web-deploy --revision=1```
+
+### Declarative way of updating deployment
+#### Update the Image version of yaml definition to 1.8.1
+#### Get the rollout history of the deployment
+```kubectl rollout history web-deploy```
+#### Verify the replicaset has changed and notice the rollout events
+```kubectl describe deploy web-deploy```
+#### List before and after replicaset associated with the deployment
+```kubectl get rs```
+
+### Imperative way of updating deployment
+```kubectl set image deploy web-deploy nginx=nginx:1.9.1 --record```
+
+```kubectl rollout history web-deploy```
+
+```kubectl rollout undo deploy web-deploy```
+
+```kubectl rollout undo deploy web-deploy --to-revision=1```
+
+
+## SERVICE (WordPress with MySQL)
+### View then apply all definitions within the service folder
+```kubectl apply -f .```
+
+### List the services
+```kubectl get svc```
+
+### Get the public DNS of the LoadBalancer and view on Browser, complete setup process
+
+### Verify wordpress pod is communicating with the mysql pod
+
+```kubectl exec -it mysql -- sh```
+
+```mysql -u root -p```
+
+```show databases;```
+
+```use wordpress;```
+
+```show tables;```
+
+```quit```
+
+```exit```
+
+
+
+
