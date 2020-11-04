@@ -3,7 +3,7 @@
 aws, eksctl & kubectl tools installed and pre-configured
 ## General
 ### To create an EKS cluster
-eksctl create cluster -f cluster.yaml
+```eksctl create cluster -f cluster.yaml```
 ### To view the worker nodes of an EKS cluster
 kubectl get nodes
 ### To view the cluster information
