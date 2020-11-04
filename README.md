@@ -9,7 +9,7 @@ aws, eksctl & kubectl tools installed and pre-configured
 ### To view the cluster information
 ```kubectl cluster-info```
 ## PODS
-### Create a pod from a yaml definition
+### Switch to the pod folder. Create a pod from a yaml definition
 ```kubectl apply -f pod.yaml```
 ### List the pods
 ```kubectl get pods```
@@ -44,7 +44,7 @@ aws, eksctl & kubectl tools installed and pre-configured
 ```kubectl logs random-logger -f```
 
 ## REPLICASETS
-### Create a replicaset from a yaml definition
+### Switch to the replicaset folder. Create a replicaset from a yaml definition
 ```kubectl apply -f replicaset.yaml```
 
 ### List the replicasets
@@ -86,7 +86,7 @@ Edit replicaset.yaml and update the replica count to 5
 
 
 ## DEPLOYMENT
-### Create a deployment from a yaml definition
+### Switch to the deployment folder. Create a deployment from a yaml definition
 ```kubectl apply -f deployment.yaml```
 
 ### Check the rollout status of the deployment
@@ -130,7 +130,7 @@ Edit replicaset.yaml and update the replica count to 5
 
 
 ## SERVICE (WordPress with MySQL)
-### View then apply all definitions within the service folder
+### Switch to the service folder. View then apply all definitions within the service folder
 ```kubectl apply -f .```
 
 ### List the services
