@@ -9,7 +9,7 @@ aws, eksctl & kubectl tools installed and pre-configured
 ### To view the cluster information
 ```kubectl cluster-info```
 ## PODS
-### Create a pod from a pod definition
+### Create a pod from a yaml definition
 ```kubectl apply -f pod.yaml```
 ### List the pods
 ```kubectl get pods```
@@ -35,7 +35,19 @@ aws, eksctl & kubectl tools installed and pre-configured
 ```kubectl run web-pod  --image=nginx --restart=Never```
 ### View logs of a pod
 ```cat pod-random-logger.yaml```
+
 ```kubectl apply pod-random-logger.yaml```
+
 ```kubectl logs random-logger```
+
 ### To tail live logs
 ```kubectl logs random-logger -f```
+
+## REPLICASETS
+### Create a replicaset from a yaml definition
+```kubectl apply -f replicaset.yaml```
+
+### List the replicasets
+```kubectl get rs```
+or
+```kubectl get replicasets```
