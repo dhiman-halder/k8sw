@@ -90,7 +90,7 @@ Edit replicaset.yaml and update the replica count to 5
 ```kubectl apply -f deployment.yaml```
 
 ### Check the rollout status of the deployment
-```kubectl rollout status web-deploy```
+```kubectl rollout status deploy web-deploy```
 
 ### List deployments
 ```kubectl get deploy``` or ```kubectl get deployments```
@@ -105,15 +105,18 @@ Edit replicaset.yaml and update the replica count to 5
 ```kubectl get pods```
 
 ### Get the rollout history of a deployment
-```kubectl rollout history web-deploy```
+```kubectl rollout history deploy web-deploy```
 
 ### Get the rollout history of a particular rollout of a deployment
-```kubectl rollout history web-deploy --revision=1```
+```kubectl rollout history deploy web-deploy --revision=1```
 
 ### Declarative way of updating deployment
 #### Update the Image version of yaml definition to 1.8.1
+
+```kubectl apply -f deployment.yaml```
+
 #### Get the rollout history of the deployment
-```kubectl rollout history web-deploy```
+```kubectl rollout history deploy web-deploy```
 #### Verify the replicaset has changed and notice the rollout events
 ```kubectl describe deploy web-deploy```
 #### List before and after replicaset associated with the deployment
@@ -122,7 +125,7 @@ Edit replicaset.yaml and update the replica count to 5
 ### Imperative way of updating deployment
 ```kubectl set image deploy web-deploy nginx=nginx:1.9.1 --record```
 
-```kubectl rollout history web-deploy```
+```kubectl rollout history deploy web-deploy```
 
 ```kubectl rollout undo deploy web-deploy```
 
