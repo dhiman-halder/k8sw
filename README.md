@@ -43,6 +43,10 @@ aws, eksctl & kubectl tools installed and pre-configured
 ### To tail live logs
 ```kubectl logs random-logger -f```
 
+^c to stop
+
+```kubectl delete pod random-logger```
+
 ## REPLICASET
 ### Switch to the replicaset folder. Create a replicaset from a yaml definition
 ```kubectl apply -f replicaset.yaml```
@@ -131,6 +135,8 @@ Edit replicaset.yaml and update the replica count to 5
 
 ```kubectl rollout undo deploy web-deploy --to-revision=1```
 
+### Delete deployment
+```kubectl delete deploy web-deploy```
 
 ## SERVICE (WordPress with MySQL)
 ### Switch to the service folder. View then apply all definitions within the service folder
@@ -157,6 +163,7 @@ Edit replicaset.yaml and update the replica count to 5
 
 ```exit```
 
-
+### To delete the EKS cluster
+```eksctl delete cluster demo```
 
 
