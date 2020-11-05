@@ -8,7 +8,7 @@ aws, eksctl & kubectl tools installed and pre-configured
 ```kubectl get nodes```
 ### To view the cluster information
 ```kubectl cluster-info```
-## PODS
+## POD
 ### Switch to the pod folder. Create a pod from a yaml definition
 ```kubectl apply -f pod.yaml```
 ### List the pods
@@ -43,7 +43,7 @@ aws, eksctl & kubectl tools installed and pre-configured
 ### To tail live logs
 ```kubectl logs random-logger -f```
 
-## REPLICASETS
+## REPLICASET
 ### Switch to the replicaset folder. Create a replicaset from a yaml definition
 ```kubectl apply -f replicaset.yaml```
 
