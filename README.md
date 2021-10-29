@@ -76,7 +76,7 @@ Edit replicaset.yaml and update the replica count to 5
 
 ### Imperative way of scaling a replicaset
 
-```kubectl scale rs web-rs —replicas=2```
+```kubectl scale rs web-rs -—replicas=2```
 
 ```kubectl get pods```
 
